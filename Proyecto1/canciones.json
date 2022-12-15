@@ -1,0 +1,26 @@
+[
+    {
+     "artist": "CarlosJuarez",
+     "name": "cancion1",
+     "duration": 2.2,
+     "gender": ["rock","pop"]
+    },
+    {
+     "artist": "AngelaRodriguez",
+     "name": "cancion2",
+     "duration": 4.0,
+     "gender": ["rock"]
+    },
+    {
+     "artist": "PedroHernandez",
+     "name": "cancion3",
+     "duration": 5.2,
+     "gender": ["pop"]
+    },
+    {
+     "artist": "CarlosJuarez",
+     "name": "cancion4",
+     "duration": 5.2,
+     "gender": ["pop"]
+    }
+]

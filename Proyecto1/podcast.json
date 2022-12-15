@@ -1,0 +1,26 @@
+[
+    {
+     "name": "Internet",
+     "topic": "Tema 1",
+     "invitados": ["Invitado 1","Invitado 2"],
+     "duration": 5
+    },
+    {
+     "name": "Computadoras",
+     "topic": "Tema 1",
+     "invitados": ["Invitado 1","Invitado 3"],
+     "duration": 5
+    },
+    {
+     "name": "Felicidad",
+     "topic": "Tema 1",
+     "invitados": ["Invitado 1","Invitado 5"],
+     "duration": 5
+    },
+    {
+     "name": "Alegria en la vida",
+     "topic": "Tema 1",
+     "invitados": ["Invitado 1","Invitado 2"],
+     "duration": 5
+    }
+]

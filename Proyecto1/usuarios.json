@@ -1,0 +1,44 @@
+[
+    {"dpi": 2654568452521,
+     "name": "Oscar Armin",
+     "username": "EDD",
+     "password": "123",
+     "phone": 12345678,
+     "admin": true
+    },
+    {"dpi": 2644456845244,
+     "name": "Manuel J",
+     "username": "manuel",
+     "password": "1234",
+     "phone": 12345678,
+     "admin": false
+    },
+    {"dpi": 2654561152521,
+     "name": "Antonio P",
+     "username": "antonio",
+     "password": "123",
+     "phone": 12345678,
+     "admin": false
+    },
+    {"dpi": 2654561152521,
+     "name": "James J",
+     "username": "james",
+     "password": "123",
+     "phone": 12345678,
+     "admin": true
+    },
+    {"dpi": 2654561152521,
+     "name": "Daiana",
+     "username": "diana",
+     "password": "123",
+     "phone": 12345678,
+     "admin": false
+    },
+    {"dpi": 2654561152521,
+     "name": "Jorde K",
+     "username": "jorge",
+     "password": "123",
+     "phone": 12345678,
+     "admin": true
+    }
+]

@@ -452,6 +452,178 @@ class Lista {
 
  }
 
+ //QUICKSORT
+  ordenarDesendente(){
+    var fin=null
+
+
+    while(fin!=this.primero){
+
+        var r, p
+        r=this.primero
+        p=this.primero
+
+        while(p.siguiente!=fin){
+
+            var q =p.siguiente
+            
+
+            //console.log(p.inf +"**")
+            //console.log(q.inf)
+            //si se quiere revertir el orden solo se cambia el < o por >
+            if(p.dato < q.dato){
+
+                p.siguiente=q.siguiente
+
+
+
+                q.siguiente=p 
+
+
+
+                if(p!=this.primero){
+
+
+
+                    r.siguiente=q
+                }
+                else{
+
+
+                    this.primero=q
+                }
+
+
+                var aux =p
+
+                p=q
+
+                q=aux
+
+
+            }
+
+            r=p
+
+            p=p.siguiente
+
+
+        }
+    
+
+        fin=p
+    }
+  }
+
+    // metodo de ordenamiento con quickSort 
+  particion(inicio, fin)
+  {
+    if (inicio == fin || inicio == null || fin == null){
+        return inicio;
+    }
+        
+
+    var anterior = inicio;
+    var auxiliar = inicio;
+    var pivote = fin.dato;
+
+    while (inicio != fin){
+        if (inicio.dato > pivote)
+        {
+            anterior = auxiliar;
+            var temporal = auxiliar.dato;
+            auxiliar.dato = inicio.dato;
+            inicio.dato = temporal;
+            auxiliar = auxiliar.siguiente;
+        }
+        inicio = inicio.siguiente;
+    }
+
+    var temporal = auxiliar.dato;
+    auxiliar.dato = pivote;
+    fin.dato = temporal;
+
+    return anterior;
+  }
+
+  sort(inicio, fin){
+  if (inicio == null || inicio == fin || inicio == fin.siguiente){
+    return;
+  }
+        
+
+  var pivote2 = this.particion(inicio, fin);
+  this.sort(inicio, pivote2);
+
+  if (pivote2 != null && pivote2 == inicio){
+    this.sort(pivote2.siguiente, fin);
+  }
+    
+  else if (pivote2 != null && pivote2.siguiente != null){
+    this.sort(pivote2.siguiente.siguiente, fin);
+  }
+    
+  }
+
+  ordenar2(){
+    var ultimo = this.primero;
+    while (ultimo.siguiente != null){
+        ultimo = ultimo.siguiente;
+    }
+    this.sort(this.primero, ultimo);
+  }
+
+  //BURBUJA - ASCENDENTE
+
+  ordenarAscendente(){
+    var fin=null
+
+
+    while(fin!=this.primero){
+
+        var primero, segundo
+        primero=this.primero
+        segundo=this.primero
+
+        while(segundo.siguiente!=fin){
+
+            var  tercero=segundo.siguiente
+
+            if(segundo.dato > tercero.dato){
+
+                segundo.siguiente=tercero.siguiente
+                tercero.siguiente=segundo 
+
+                if(segundo!=this.primero){
+
+                    primero.siguiente=tercero
+                }
+                else{
+                    this.primero=tercero
+                }
+
+
+                var aux =segundo
+
+                segundo=tercero
+
+                tercero=aux
+
+            }
+
+            primero=segundo
+            segundo=segundo.siguiente
+
+        }
+    
+
+        fin=segundo
+    }
+}
+
+
+
+
 }
 
 var listaArtistas = new Lista();
@@ -1848,6 +2020,7 @@ function CargaMasivaArtistas(e){
       alert("Archivo cargado Exitosamente")
       console.log("Ordenamiento");
       //ordenamiento(listaArtistas);
+      listaArtistas.ordenar2();
       listaArtistas.graficarListaDeListas();
     
  
@@ -2052,16 +2225,17 @@ function eliminarAmigo(){
     var artista = document.getElementById("nombreArtista").value;
     var cancion = document.getElementById("nombreCancion").value;
     listaArtistas.add(artista)
+    listaArtistas.ordenar2();
     listaArtistas.add2(artista,cancion)
     alert("Cancion publicada con exito")
   }
 
   function publicarProgramado(){
+    var artista = document.getElementById("nombreArtista").value;
     var cancion = document.getElementById("nombreCancion").value;
-    var album = document.getElementById("nombreAlbum").value;
     var dia = document.getElementById("dia").value;
     var mes = document.getElementById("mes").value;
-    matrizDispersa.insertarDatoDispersa(cancion + " " + album , mes , dia )
+    matrizDispersa.insertarDatoDispersa(cancion + " " + artista , mes , dia )
     alert("Cancion agregada a programación")
     
   }
@@ -2130,7 +2304,7 @@ function showDivUsuario(){
 }
 
 
-//showDivIniciales()
+showDivIniciales()
 
 console.log(listaUsuarios);
 console.log(listaArtistas);
